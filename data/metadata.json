@@ -1,0 +1,62 @@
+[
+  {
+    "document_id": "NG-CBN-AML-2026",
+    "file_name": "cbn_aml_automation_baseline_2026.pdf",
+    "jurisdiction": "NG",
+    "authority": "Central Bank of Nigeria",
+    "document_type": "Circular",
+    "effective_date": "2026-03-10",
+    "compliance_deadline": "2026-06-10",
+    "tags": ["AML", "CFT", "Automated Solutions", "Banking"],
+    "residency": "Local-NG",
+    "routing_keywords": ["CBN", "Naira", "Lagos", "Abuja", "NDPA"]
+  },
+  {
+    "document_id": "SA-SARB-JS2-2024",
+    "file_name": "sarb_joint_standard_2_resilience.pdf",
+    "jurisdiction": "SA",
+    "authority": "South African Reserve Bank",
+    "document_type": "Joint Standard",
+    "effective_date": "2024-11-01",
+    "compliance_deadline": "2025-06-01",
+    "tags": ["Cyber Resilience", "Operational Risk", "FSP"],
+    "residency": "South Africa North",
+    "routing_keywords": ["SARB", "Rand", "ZAR", "Johannesburg", "POPIA"]
+  },
+  {
+    "document_id": "KE-CBK-NPS-2026",
+    "file_name": "cbk_national_payments_strategy_2026.pdf",
+    "jurisdiction": "KE",
+    "authority": "Central Bank of Kenya",
+    "document_type": "Strategy/Regulation",
+    "effective_date": "2026-01-15",
+    "compliance_deadline": "2026-12-31",
+    "tags": ["Digital Finance", "NPS", "Interoperability", "Mobile Money"],
+    "residency": "East Africa",
+    "routing_keywords": ["CBK", "Shilling", "KES", "Nairobi", "M-Pesa"]
+  },
+  {
+    "document_id": "UK-FCA-CD-2023",
+    "file_name": "fca_consumer_duty_final_rules.pdf",
+    "jurisdiction": "UK",
+    "authority": "Financial Conduct Authority",
+    "document_type": "Policy Statement",
+    "effective_date": "2023-07-31",
+    "compliance_deadline": "Active",
+    "tags": ["Consumer Duty", "Fair Value", "Conduct", "Vulnerable Customers"],
+    "residency": "UK South",
+    "routing_keywords": ["FCA", "Pound", "GBP", "London", "GDPR"]
+  },
+  {
+    "document_id": "US-SEC-AI-2025",
+    "file_name": "sec_ria_predictive_analytics_rule.pdf",
+    "jurisdiction": "US",
+    "authority": "Securities and Exchange Commission",
+    "document_type": "Final Rule",
+    "effective_date": "2025-10-20",
+    "compliance_deadline": "2026-04-20",
+    "tags": ["Investment Advisors", "Conflict of Interest", "Predictive Analytics"],
+    "residency": "East US",
+    "routing_keywords": ["SEC", "Dollar", "USD", "Wall Street", "FINRA"]
+  }
+]
