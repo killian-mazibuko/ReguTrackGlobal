@@ -131,8 +131,8 @@ def test_chat(sized_page: Page, live_server_url: str):
     assert results.violations_count == 0, results.generate_report()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?) (e.g. does my plan cover annual eye exams?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_role("button", name="Submit question").click()
@@ -190,8 +190,8 @@ def test_chat_stop_button_visibility(page: Page, live_server_url: str):
     expect(page.get_by_label("Stop streaming")).not_to_be_visible()
 
     # Ask a question
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Submit question").click()
@@ -223,7 +223,7 @@ def test_chat_stop_restores_question(page: Page, live_server_url: str):
     expect(page).to_have_title("ReguTrack Global")
 
     # Type a question
-    question_input = page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)")
+    question_input = page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)")
     question_input.click()
     question_input.fill("Whats the dental plan?")
 
@@ -303,8 +303,8 @@ def test_chat_customization(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_role("button", name="Submit question").click()
@@ -404,8 +404,8 @@ def test_chat_customization_multimodal(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Submit question").click()
@@ -431,8 +431,8 @@ def test_chat_nonstreaming(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)?)?)?)?)?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)?)?)?)?)?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Submit question").click()
@@ -470,8 +470,8 @@ def test_chat_followup_streaming(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)?)?)?)?)?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Submit question").click()
@@ -508,8 +508,8 @@ def test_chat_followup_nonstreaming(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)?)?)?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Submit question").click()
@@ -727,8 +727,8 @@ def test_agentic_retrieval_effort_minimal_disables_web(page: Page, live_server_u
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)").click()
+    page.get_by_placeholder("Type a new question (e.g. how is data protected in South Africa?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_role("button", name="Submit question").click()

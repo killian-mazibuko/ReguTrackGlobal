@@ -1,13 +1,13 @@
 from azure.search.documents import SearchClient
-from azure.core.credentials import AzureKeyCredential
+from azure.identity import DefaultAzureCredential
 
 class ReguSearch:
-    def __init__(self, endpoint, key):
+    def __init__(self, endpoint):
         self.endpoint = endpoint
-        self.key = AzureKeyCredential(key)
+        self.credential = DefaultAzureCredential()
 
     def search_jurisdiction(self, index_name, query):
-        client = SearchClient(self.endpoint, index_name, self.key)
+        client = SearchClient(self.endpoint, index_name, self.credential)
         # We use Semantic Search for higher legal accuracy
         results = client.search(
             search_text=query,

@@ -13,7 +13,7 @@ TEST_OLD_ITEM = {
     "timestamp": 123456789,
     "answers": [
         [
-            "What does a Product Manager do?",
+            "How is data protected in the UK?",
             {
                 "delta": {"role": "assistant"},
                 "session_state": "143c0240-b2ee-4090-8e90-2a1c58124894",
@@ -151,7 +151,7 @@ async def test_migrate_method():
     assert message1_item["id"] == "123-0"
     assert message1_item["session_id"] == "123"
     assert message1_item["entra_oid"] == "OID_X"
-    assert message1_item["question"] == "What does a Product Manager do?"
+    assert message1_item["question"] == "How is data protected in the UK?"
     assert message1_item["type"] == "message_pair"
     assert message1_item["order"] == 0
 

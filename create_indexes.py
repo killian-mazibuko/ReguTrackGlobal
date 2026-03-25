@@ -1,10 +1,15 @@
 
-import requests
+from azure.identity import DefaultAzureCredential
+from azure.search.documents.indexes import SearchIndexClient
+from azure.search.documents.indexes.models import SearchIndex
 
 # --- CONFIGURATION ---
 SEARCH_SERVICE_NAME = "gptkb-hks3xzhnncdl4"
-ADMIN_KEY = "BzDV4mA6Gq5kXdXY2IZ8VyNRae2NOw5jV8eB9VTb6nAzSeBv8C1Y"
-API_VERSION = "2024-07-01"
+
+# Use role-based authentication
+credential = DefaultAzureCredential()
+endpoint = f"https://{SEARCH_SERVICE_NAME}.search.windows.net"
+client = SearchIndexClient(endpoint=endpoint, credential=credential)
 
 # 1 indnex for all
 index_name = "idx-regutrack-global"
@@ -34,8 +39,6 @@ schema = {
     }
 }
 
-headers = {'Content-Type': 'application/json', 'api-key': ADMIN_KEY}
-
-schema["name"] = index_name
-requests.put(f"https://{SEARCH_SERVICE_NAME}.search.windows.net/indexes/{index_name}?api-version={API_VERSION}", headers=headers, json=schema)
+index = SearchIndex(name=index_name, fields=schema["fields"], vector_search=schema["vectorSearch"], semantic_search=schema["semantic"])
+client.create_index(index)
 print(f"Created: {index_name}")

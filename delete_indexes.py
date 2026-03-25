@@ -1,9 +1,14 @@
-import requests
+import os
+from azure.identity import DefaultAzureCredential
+from azure.search.documents.indexes import SearchIndexClient
+
 # --- CONFIGURATION ---
 SEARCH_SERVICE_NAME = "gptkb-hks3xzhnncdl4"
-ADMIN_KEY = "BzDV4mA6Gq5kXdXY2IZ8VyNRae2NOw5jV8eB9VTb6nAzSeBv8C1Y"
-API_VERSION = "2024-07-01"
 
+# Use role-based authentication
+credential = DefaultAzureCredential()
+endpoint = f"https://{SEARCH_SERVICE_NAME}.search.windows.net"
+client = SearchIndexClient(endpoint=endpoint, credential=credential)
 
 index_names = [
     "idx-sa-finance", "idx-sa-digital", "idx-ng-finance", "idx-ng-digital",
@@ -12,6 +17,8 @@ index_names = [
 ]
 
 for name in index_names:
-    url = f"https://{SEARCH_SERVICE_NAME}.search.windows.net/indexes/{name}?api-version={API_VERSION}"
-    response = requests.delete(url, headers={'api-key': ADMIN_KEY})
-    print(f"Deleted {name}: {response.status_code}")
+    try:
+        client.delete_index(name)
+        print(f"Deleted {name}: Success")
+    except Exception as e:
+        print(f"Failed to delete {name}: {str(e)}")

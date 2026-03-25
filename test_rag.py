@@ -3,8 +3,7 @@ from search_service import ReguSearch # The class we built in the previous step
 
 # Initialize Search Service
 SEARCH_ENDPOINT = "https://gptkb-hks3xzhnncdl4.search.windows.net"
-SEARCH_KEY = "BzDV4mA6Gq5kXdXY2IZ8VyNRae2NOw5jV8eB9VTb6nAzSeBv8C1Y"
-searcher = ReguSearch(SEARCH_ENDPOINT, SEARCH_KEY)
+searcher = ReguSearch(SEARCH_ENDPOINT)
 
 # test_rag.py
 

@@ -20,7 +20,6 @@ token_provider = get_bearer_token_provider(
 # --- CONFIGURATION ---
 DI_ENDPOINT = "https://cog-di-hks3xzhnncdl4.cognitiveservices.azure.com/"
 SEARCH_SERVICE_NAME = "gptkb-hks3xzhnncdl4"
-SEARCH_ADMIN_KEY = "BzDV4mA6Gq5kXdXY2IZ8VyNRae2NOw5jV8eB9VTb6nAzSeBv8C1Y"
 API_VERSION = "2024-07-01"
 PDF_FOLDER = "./data/pdfs"
 TARGET_INDEX = "idx-regutrack-global"
