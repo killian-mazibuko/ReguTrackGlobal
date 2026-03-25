@@ -1,0 +1,21 @@
+[
+  { "id": "sa_01", "file_name": "SA_Banking_Act.pdf", "title": "Banks Act 94", "jurisdiction": "SA", "index": "idx-sa-finance", "category": "Finance" },
+  { "id": "sa_02", "file_name": "SA_FIC_AML.pdf", "title": "FIC AML Regulations", "jurisdiction": "SA", "index": "idx-sa-finance", "category": "Finance" },
+  { "id": "sa_03", "file_name": "SA_POPIA_Cyber.pdf", "title": "POPIA & Cyber Standard", "jurisdiction": "SA", "index": "idx-sa-digital", "category": "Digital" },
+
+  { "id": "ng_01", "file_name": "NG_BOFIA_2020.pdf", "title": "BOFI Act 2020", "jurisdiction": "NG", "index": "idx-ng-finance", "category": "Finance" },
+  { "id": "ng_02", "file_name": "NG_AML_CFT.pdf", "title": "AML/CFT Regulations", "jurisdiction": "NG", "index": "idx-ng-finance", "category": "Finance" },
+  { "id": "ng_03", "file_name": "NG_Data_Protection.pdf", "title": "NDPR Data Protection", "jurisdiction": "NG", "index": "idx-ng-digital", "category": "Digital" },
+
+  { "id": "ke_01", "file_name": "KE_CBK_Act.pdf", "title": "Central Bank of Kenya Act", "jurisdiction": "KE", "index": "idx-ke-finance", "category": "Finance" },
+  { "id": "ke_02", "file_name": "KE_Microfinance.pdf", "title": "Microfinance Act", "jurisdiction": "KE", "index": "idx-ke-finance", "category": "Finance" },
+  { "id": "ke_03", "file_name": "KE_Digital_Lending.pdf", "title": "Digital Credit Providers", "jurisdiction": "KE", "index": "idx-ke-digital", "category": "Digital" },
+
+  { "id": "uk_01", "file_name": "UK_FCA_Handbook.pdf", "title": "FCA High Level Standards", "jurisdiction": "UK", "index": "idx-uk-finance", "category": "Finance" },
+  { "id": "uk_02", "file_name": "UK_AML_Regs.pdf", "title": "UK Money Laundering Regs", "jurisdiction": "UK", "index": "idx-uk-finance", "category": "Finance" },
+  { "id": "uk_03", "file_name": "UK_GDPR_Cyber.pdf", "title": "UK GDPR & Resilience", "jurisdiction": "UK", "index": "idx-uk-digital", "category": "Digital" },
+
+  { "id": "us_01", "file_name": "US_Dodd_Frank.pdf", "title": "Dodd-Frank Act", "jurisdiction": "US", "index": "idx-us-finance", "category": "Finance" },
+  { "id": "us_02", "file_name": "US_Bank_Secrecy.pdf", "title": "Bank Secrecy Act", "jurisdiction": "US", "index": "idx-us-finance", "category": "Finance" },
+  { "id": "us_03", "file_name": "US_CCPA_Cyber.pdf", "title": "California Privacy & SEC AI", "jurisdiction": "US", "index": "idx-us-digital", "category": "Digital" }
+]
