@@ -36,10 +36,10 @@
     "chatEmptyStateTitle": "Chat with your data",
     "chatEmptyStateSubtitle": "Ask anything or try an example",
     "defaultExamples": {
-        "1": "What does SA law say on Data Protection?",
+        "1": "What does South African law say on personal information protection?",
         "2": "How is anti money laundering tackled in Nigeria?",
         "3": "How is data protected in the UK?",
-        "placeholder": "Type a new question (e.g. how is data protected in South Africa?)"
+        "placeholder": "Type a new question (e.g. how is personal information protected in South Africa?)"
     },
     "askTitle": "Ask your data",
     "multimodalExamples": {

@@ -22,6 +22,7 @@ async def parse_file(
     file: File,
     file_processors: dict[str, FileProcessor],
     category: Optional[str] = None,
+    jurisdiction: Optional[str] = None,
     blob_manager: Optional[BaseBlobManager] = None,
     image_embeddings_client: Optional[ImageEmbeddings] = None,
     figure_processor: Optional[FigureProcessor] = None,
@@ -46,7 +47,7 @@ async def parse_file(
                 figure_processor=figure_processor,
                 user_oid=user_oid,
             )
-    sections = process_text(pages, file, processor.splitter, category)
+    sections = process_text(pages, file, processor.splitter, category, jurisdiction=jurisdiction)
     return sections
 
 

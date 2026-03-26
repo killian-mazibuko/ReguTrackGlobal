@@ -516,6 +516,7 @@ async def test_update_content(monkeypatch, search_info):
         assert documents[0]["id"] == "file-foo_pdf-666F6F2E706466-page-0"
         assert documents[0]["content"] == "test content"
         assert documents[0]["category"] == "test"
+        assert documents[0]["jurisdiction"] is None
         assert documents[0]["sourcepage"] == "foo.pdf#page=1"
         assert documents[0]["sourcefile"] == "foo.pdf"
 
@@ -536,6 +537,35 @@ async def test_update_content(monkeypatch, search_info):
                 ),
                 content=file,
                 category="test",
+            )
+        ]
+    )
+
+
+@pytest.mark.asyncio
+async def test_update_content_with_jurisdiction(monkeypatch, search_info):
+    async def mock_upload_documents(self, documents):
+        assert len(documents) == 1
+        assert documents[0]["jurisdiction"] == "SA"
+
+    monkeypatch.setattr(SearchClient, "upload_documents", mock_upload_documents)
+
+    manager = SearchManager(search_info)
+
+    test_io = io.BytesIO(b"test content")
+    test_io.name = "test/foo.pdf"
+    file = File(test_io)
+
+    await manager.update_content(
+        [
+            Section(
+                chunk=Chunk(
+                    page_num=0,
+                    text="test content",
+                ),
+                content=file,
+                category="test",
+                jurisdiction="SA",
             )
         ]
     )

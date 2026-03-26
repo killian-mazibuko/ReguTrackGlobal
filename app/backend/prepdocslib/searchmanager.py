@@ -55,10 +55,17 @@ class Section:
     A section of a page that is stored in a search service. These sections are used as context by Azure OpenAI service
     """
 
-    def __init__(self, chunk: Chunk, content: File, category: Optional[str] = None):
+    def __init__(
+        self,
+        chunk: Chunk,
+        content: File,
+        category: Optional[str] = None,
+        jurisdiction: Optional[str] = None,
+    ):
         self.chunk = chunk  # content comes from here
         self.content = content  # sourcepage and sourcefile come from here
         self.category = category
+        self.jurisdiction = jurisdiction
         # this also needs images which will become the images field
 
 
@@ -141,7 +148,7 @@ class SearchManager:
                     ),
                 )
                 text_vector_search_profile = VectorSearchProfile(
-                    name=f"{self.field_name_embedding}-profile",
+                    name="embedding3-profile",
                     algorithm_configuration_name=text_vector_algorithm.name,
                     compression_name=text_vector_compression.compression_name,
                     **({"vectorizer_name": text_vectorizer.vectorizer_name if text_vectorizer else None}),
@@ -156,7 +163,7 @@ class SearchManager:
                     sortable=False,
                     facetable=False,
                     vector_search_dimensions=self.embedding_dimensions,
-                    vector_search_profile_name=f"{self.field_name_embedding}-profile",
+                    vector_search_profile_name="embedding3-profile",
                     stored=False,
                 )
 
@@ -257,6 +264,7 @@ class SearchManager:
                         analyzer_name=self.search_analyzer_name,
                     ),
                     SimpleField(name="category", type="Edm.String", filterable=True, facetable=True),
+                    SimpleField(name="jurisdiction", type="Edm.String", filterable=True),
                     SimpleField(
                         name="sourcepage",
                         type="Edm.String",
@@ -346,6 +354,7 @@ class SearchManager:
             else:
                 logger.info("Search index %s already exists", self.search_info.index_name)
                 existing_index = await search_index_client.get_index(self.search_info.index_name)
+                fields_updated = False
                 if not any(field.name == "storageUrl" for field in existing_index.fields):
                     logger.info("Adding storageUrl field to index %s", self.search_info.index_name)
                     existing_index.fields.append(
@@ -356,6 +365,20 @@ class SearchManager:
                             facetable=False,
                         ),
                     )
+                    fields_updated = True
+
+                if not any(field.name == "jurisdiction" for field in existing_index.fields):
+                    logger.info("Adding jurisdiction field to index %s", self.search_info.index_name)
+                    existing_index.fields.append(
+                        SimpleField(
+                            name="jurisdiction",
+                            type="Edm.String",
+                            filterable=True,
+                        )
+                    )
+                    fields_updated = True
+
+                if fields_updated:
                     await search_index_client.create_or_update_index(existing_index)
 
                 if embedding_field and not any(
@@ -484,7 +507,7 @@ class SearchManager:
     async def create_knowledgebase(self):
         """Creates one or more Knowledge Bases in the search index based on desired knowledge sources."""
         if self.search_info.knowledgebase_name:
-            field_names = ["id", "sourcepage", "sourcefile", "content", "category"]
+            field_names = ["id", "sourcepage", "sourcefile", "content", "category", "jurisdiction"]
             if self.use_acls:
                 field_names.extend(["oids", "groups"])
             if self.search_images:

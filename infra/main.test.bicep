@@ -21,7 +21,7 @@ module main 'main.bicep' = {
     documentIntelligenceSkuName: 'S0'
     openAiHost: 'azure'
     openAiLocation: location
-    searchFieldNameEmbedding: 'embedding'
+    searchFieldNameEmbedding: 'embedding3'
     searchIndexName: 'idx-regutrack-global'
     searchQueryLanguage: 'en-us'
     searchQuerySpeller: 'lexicon'
