@@ -33,3 +33,13 @@ ReguTrack Global utilizes a modular cloud architecture to ensure scalability acr
 
 ### System Components:
 * **App Service:** Python (FastAPI) backend
+
+Handling Multi-Jurisdictional Data
+When adding new regulatory data:
+
+Place PDFs in data/[country_name].
+
+Run the ingestion script with the --tenant flag to ensure proper metadata routing:
+
+Bash
+python ./app/backend/prepdocs.py --data ./data/nigeria --index idx-regutrack-global --tenant nigeria
