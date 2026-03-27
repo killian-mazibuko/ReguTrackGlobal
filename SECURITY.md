@@ -1,40 +1,36 @@
-<!-- BEGIN MICROSOFT SECURITY.MD V0.0.5 BLOCK -->
-# Security
+# Security Policy: ReguTrack Global
 
-Microsoft takes the security of our software products and services seriously, which includes all source code repositories managed through our GitHub organizations, which include [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet), [Xamarin](https://github.com/xamarin), and [our GitHub organizations](https://opensource.microsoft.com/).
+ReguTrack Global is committed to maintaining the highest security standards for multi-jurisdictional regulatory intelligence. Given our focus on the **2026 Fiscal Reforms** in the UK, USA, SA, Nigeria, and Kenya, we prioritize data integrity and the prevention of adversarial "jailbreaking" or data leakage.
 
-If you believe you have found a security vulnerability in any Microsoft-owned repository that meets [Microsoft's definition of a security vulnerability](<https://docs.microsoft.com/previous-versions/tn-archive/cc751383(v=technet.10)>), please report it to us as described below.
-
-## Reporting Security Issues
+## Reporting a Security Vulnerability
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Instead, please report them to the Microsoft Security Response Center (MSRC) at [https://msrc.microsoft.com/create-report](https://msrc.microsoft.com/create-report).
+If you believe you have discovered a security vulnerability—such as an authentication bypass, data leakage between country indices, or a prompt injection that bypasses our grounding filters—please report it via the following channels:
 
-If you prefer to submit without logging in, send email to [secure@microsoft.com](mailto:secure@microsoft.com). If possible, encrypt your message with our PGP key; please download it from the [Microsoft Security Response Center PGP Key page](https://www.microsoft.com/msrc/pgp-key-msrc).
+* **Primary:** Email [security@regutrack.global](mailto:security@regutrack.global) (Direct to Engineering Lead)
+* **Response Time:** You will receive an initial acknowledgment within **24 hours**.
 
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://www.microsoft.com/msrc).
+## Our Security Posture
 
-Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
+ReguTrack Global is built on a **Zero-Trust Architecture** to meet 2026 international standards:
 
-- Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting, etc.)
-- Full paths of source file(s) related to the manifestation of the issue
-- The location of the affected source code (tag/branch/commit or direct URL)
-- Any special configuration required to reproduce the issue
-- Step-by-step instructions to reproduce the issue
-- Proof-of-concept or exploit code (if possible)
-- Impact of the issue, including how an attacker might exploit the issue
+1. **Identity & Access:** We utilize **Azure Managed Identities** exclusively. No API keys or connection strings are stored in the application code or environment variables.
+2. **Data Residency:** Regulatory data is logically partitioned by country code. UK data (GDPR) and Nigeria data (NDPA 2026) are handled within their respective sovereignty boundaries.
+3. **AI Grounding:** To prevent "hallucinations" or misinformation, the system uses a **Strict-Grounding Protocol**. The AI is forbidden from answering questions using its general knowledge if a specific 2026 regulatory source is not found in the index.
+4. **Encryption:** All data is encrypted at rest via AES-256 and in transit via TLS 1.3.
 
-This information will help us triage your report more quickly.
+## Information to Include in Reports
 
-If you are reporting for a bug bounty, more complete reports can contribute to a higher bounty award. Please visit our [Microsoft Bug Bounty Program](https://microsoft.com/msrc/bounty) page for more details about our active programs.
+To help us triage your report quickly, please include:
+- **Vulnerability Type:** (e.g., Prompt Injection, RBAC Bypass, SSRF)
+- **Affected Component:** (e.g., Ingestion Pipeline, Backend API, Search Index)
+- **Country Context:** Does this affect a specific regional index (e.g., Nigeria 2026) or the global system?
+- **Steps to Reproduce:** Clear, step-by-step instructions or a proof-of-concept.
 
-## Preferred Languages
+## Responsible AI Disclosure
 
-We prefer all communications to be in English.
+We follow the principle of **Coordinated Vulnerability Disclosure**. We ask that you do not disclose any vulnerability publicly until we have had the opportunity to analyze and mitigate the risk, ensuring the safety of global compliance data.
 
-## Policy
-
-Microsoft follows the principle of [Coordinated Vulnerability Disclosure](https://www.microsoft.com/msrc/cvd).
-
-<!-- END MICROSOFT SECURITY.MD BLOCK -->
+---
+*Last Updated: March 2026*
