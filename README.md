@@ -31,6 +31,19 @@ ReguTrack Global is specifically engineered to handle the "2026 Regulatory Wave"
 
 ReguTrack Global utilizes a modular cloud architecture to ensure scalability across regional indices.
 
+## Value Proposition
+ReguTrack Global is a high-precision, Agentic RAG (Retrieval-Augmented Generation) that connects cyber threat intelligence with regulatory knowledge to help compliance teams detect fraud faster, understand obligations instantly, and act within legal timelines.
+
+-First AI platform connecting regulatory text directly with live fraud and cyber threat data.
+
+-Reduces manual research time from hours to minutes.
+
+-Supports multi-jurisdictional compliance across Africa and Europe.
+
+-Provides audit-ready AI explanations for regulatory reporting.
+
+-Enhances team collaboration for compliance officers, legal, and finance.
+
 ### System Components:
 * **App Service:** Python (FastAPI) backend
 
